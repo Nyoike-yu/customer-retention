@@ -1,7 +1,6 @@
-Predictive Customer Retention Engine (ML API)
-An end-to-end Machine Learning pipeline and RESTful API designed to predict customer churn.
+Predictive Customer Retention Engine (ML API): An end-to-end Machine Learning pipeline and RESTful API designed to predict customer churn.
 
-Unlike standard academic data science projects that stop at a Jupyter Notebook, this project bridges the gap between Data Science and Software Engineering. It encompasses raw data wrangling, feature selection, mathematical model training (Random Forest), and deployment via a high-performance FastAPI backend.
+This project bridges the gap between Data Science and Software Engineering. It encompasses raw data wrangling, feature selection, mathematical model training (Random Forest), and deployment via a high-performance FastAPI backend.
 
 Tech Stack
 Language: Python
@@ -11,7 +10,7 @@ API Framework: FastAPI, Uvicorn, Pydantic
 Model Serialization: Joblib
 
 Key Learnings & Technical Challenges Overcome
-Building this pipeline from scratch exposed several critical edge cases that separate theoretical machine learning from production-grade engineering. Here are the core concepts mastered during this project:
+Building this pipeline from scratch exposed several critical edge cases that separate theoretical machine learning from production grade engineering. Here are the core concepts mastered during this project:
 
 1. Feature Selection & Defeating "Probability Compression"
 Initially, the model was fed the entire dataset (over 20 features) while the API only collected 6. This discrepancy forced the API to automatically fill the missing 14 data points with 0s for every request. As a result, the model suffered from Probability Compression—it saw a profile entirely filled with zeros, got confused, and safely guessed the dataset's average churn rate (~26%) every single time.
